@@ -10,5 +10,10 @@ namespace ELDocClinic.Areas.Patient.Controllers
 
             return View();
         }
+
+        public IActionResult GetPatientById(int id)
+        {
+            return View(viewName:"GetPatientVM");
+        }
     }
 }

@@ -23,5 +23,24 @@ namespace ELDocClinic.Respositories
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             base.OnModelCreating(modelBuilder);
         }
+
+        public override int SaveChanges()
+        {
+            var timestamp = DateTime.UtcNow;
+            foreach (var entry in ChangeTracker.Entries())
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("CreatedAt").CurrentValue = timestamp;
+                    entry.Property("LastUpdatedAt").CurrentValue = timestamp;
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("LastUpdatedAt").CurrentValue = timestamp;
+                }
+            }
+            return base.SaveChanges();
+        }
+
     }
 }
