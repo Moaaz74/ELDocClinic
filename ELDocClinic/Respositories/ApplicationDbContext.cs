@@ -1,4 +1,5 @@
-﻿using ELDocClinic.Models;
+﻿using ELDocClinic.Configurations;
+using ELDocClinic.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,10 +20,7 @@ namespace ELDocClinic.Respositories
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ApplicationUser>().Property<bool>("IsDeleted");
-            modelBuilder.Entity<ApplicationUser>().Property<DateTime>("CreatedAt");
-            modelBuilder.Entity<ApplicationUser>().Property<DateTime>("LastUpdatedAt");
-            modelBuilder.Entity<ApplicationUser>().HasDiscriminator<ushort>("Discriminator");
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
