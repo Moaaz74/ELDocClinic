@@ -30,7 +30,6 @@
     <Folder Include="Areas\Doctor\" />
     <Folder Include="Areas\Assistant\" />
     <Folder Include="Areas\Account\" />
-    <Folder Include="Services\User\" />
   </ItemGroup>
 
   <ItemGroup>
