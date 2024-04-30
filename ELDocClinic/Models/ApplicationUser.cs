@@ -4,6 +4,5 @@ namespace ELDocClinic.Models
 {
     public class ApplicationUser : IdentityUser
     {
-            
     }
 }

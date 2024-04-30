@@ -1,3 +1,4 @@
+using ELDocClinic.Configurations;
 using ELDocClinic.Models;
 using ELDocClinic.Respositories;
 using Microsoft.AspNetCore.Identity;
@@ -20,6 +21,8 @@ namespace ELDocClinic
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddRazorPages();
+
+            builder.Services.AddAutoMapper(typeof(MapperConfig));
 
             var app = builder.Build();
 

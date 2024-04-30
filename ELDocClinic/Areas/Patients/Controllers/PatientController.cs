@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ELDocClinic.Areas.Patient.Controllers
+namespace ELDocClinic.Areas.Patients.Controllers
 {
     [Area("Patient")]
     public class PatientController : Controller

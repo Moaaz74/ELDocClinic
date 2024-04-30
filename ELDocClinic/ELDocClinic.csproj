@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Patient\Views\_PatientLayout.cshtml" />
+    <Content Remove="Areas\Patients\Views\_PatientLayout.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.16">
       <PrivateAssets>all</PrivateAssets>
@@ -29,19 +32,18 @@
   <ItemGroup>
     <Folder Include="Areas\Doctor\" />
     <Folder Include="Areas\Assistant\" />
-    <Folder Include="Areas\Account\" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Areas\Patient\Views\_PatientLayout.cshtml" />
+    <UpToDateCheckInput Remove="Areas\Patients\Views\_PatientLayout.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Areas\Patient\Views\_PatientLayout.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Patients\Views\_PatientLayout.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Patient\Views\Shared\_PatientLayout.cshtml" />
+    <None Include="Areas\Patients\Views\Shared\_PatientLayout.cshtml" />
   </ItemGroup>
 
 </Project>

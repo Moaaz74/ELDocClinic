@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ELDocClinic.Areas.Appointment.Controllers
+namespace ELDocClinic.Areas.Appointments.Controllers
 {
     public class AppointmentController : Controller
     {

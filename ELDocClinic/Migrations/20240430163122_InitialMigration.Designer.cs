@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ELDocClinic.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240304135550_InitialMigration")]
+    [Migration("20240430163122_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -40,8 +40,9 @@ namespace ELDocClinic.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Discriminator")
-                        .HasColumnType("int");
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -101,7 +102,7 @@ namespace ELDocClinic.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
 
-                    b.HasDiscriminator<int>("Discriminator");
+                    b.HasDiscriminator<string>("Discriminator");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -12,7 +12,7 @@ namespace ELDocClinic.Configurations
             builder.Property<bool>("IsDeleted");
             builder.Property<DateTime>("CreatedAt");
             builder.Property<DateTime>("LastUpdatedAt");
-            builder.HasDiscriminator<ushort>("Discriminator");
+            builder.HasDiscriminator<string>("Discriminator").HasValue("Patient");
         }
     }
 }

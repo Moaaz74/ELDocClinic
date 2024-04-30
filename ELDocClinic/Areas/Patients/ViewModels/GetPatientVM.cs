@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ELDocClinic.Areas.Patient.ViewModels
+namespace ELDocClinic.Areas.Patients.ViewModels
 {
     public class GetPatientVM
     {
